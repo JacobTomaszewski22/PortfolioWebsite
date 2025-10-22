@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 .animationDefaults{
-    animation-duration: 1s;
+    animation-duration: 800ms;
     animation-iteration-count: 1;
 }
 
