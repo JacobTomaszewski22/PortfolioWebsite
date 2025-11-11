@@ -26,7 +26,7 @@ function RouteComponent() {
           websiteURL={["https://www.burntchapter.com","https://www.burntchapter.com/tickets", "https://www.burntchapter.com/photos"]}
           websiteTitle="Burnt Chapter's Website"
           websiteDescription={
-          <div className={`translate-y-[-10vh] translate-x-[15vw] ${divClassNames} max-w-3xl`}>
+          <div className={`translate-y-[-10vh] translate-x-[3vw] ${divClassNames} max-w-3xl`}>
             <h1 className="text-4xl text-[#00FFFF] font-bold mb-5">Burnt Chapter's Band Website</h1>
             <a className={`text-2xl mb-4 text-stone-500 cursor-pointer ${divClassNames} hover:text-cyan-50 underline`} 
             href="https://www.burntchapter.com"
