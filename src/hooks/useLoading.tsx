@@ -8,7 +8,7 @@ export const useOnLoadImages = (ref: RefObject<HTMLElement>) => {
   useEffect(() => {
     const updateStatus = (images: HTMLImageElement[]) => {
       setStatus(
-        images.map((image) => image.complete).every((item) => item === true)
+        images.map((image) => image.complete).every((item) => item === true),
       );
     };
 
@@ -23,10 +23,10 @@ export const useOnLoadImages = (ref: RefObject<HTMLElement>) => {
 
     imagesLoaded.forEach((image) => {
       image.addEventListener("load", () => updateStatus(imagesLoaded), {
-        once: true
+        once: true,
       });
       image.addEventListener("error", () => updateStatus(imagesLoaded), {
-        once: true
+        once: true,
       });
     });
 
