@@ -1,32 +1,9 @@
 import StaggeredMenu from "./../components/StaggeredMenu";
-import { useEffect, useState, useContext } from "react";
-import { useMenu } from "@/contexts/MenuOpenContext";
+import { useState } from "react";
 
 export default function Navigation() {
-  //controlling the context of if the animation has finished and the menu is now closed
-
   //watching if the button has been clicked or not
   const [isMenuOpened, setIsMenuOpened] = useState(false);
-
-  // function animationListenerApplyOnEnd(event){
-  //   switch (event.type) {
-  //     case "animationend":
-  //       console.log("AnimationListernerApplyOnEnd: Animation Ended")
-  //       setMenuOpened(false)
-  //       break;
-  //   }
-  // }
-
-  // useEffect(()=>{
-  //   const thisElement = Array.from(document.getElementsByClassName("Navigation") as HTMLCollectionOf<HTMLElement>)[0]
-  //   console.log(`Navigation Element`, thisElement)
-  //   if(isMenuOpened){
-  //     thisElement.removeEventListener("animationend", animationListenerApplyOnEnd);
-  //     setMenuOpened(true);
-  //   }else{
-  //     thisElement.addEventListener("animationend", animationListenerApplyOnEnd);
-  //   }
-  // },[isMenuOpened])
 
   const menuItems = [
     { label: "Home", ariaLabel: "Go to home page", link: "/" },
@@ -35,8 +12,7 @@ export default function Navigation() {
       ariaLabel: "See my previous webpages",
       link: "/websites",
     },
-    { label: "CV", ariaLabel: "View my CV", link: "/cv" },
-    { label: "Contact", ariaLabel: "Get in touch", link: "/contact" },
+    { label: "CV", ariaLabel: "View my CV", link: "/cv" }
   ];
 
   const socialItems = [

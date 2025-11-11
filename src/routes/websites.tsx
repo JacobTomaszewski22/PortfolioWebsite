@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Websites from "@/elements/Websites";
 import { useState, useEffect } from "react";
-import { useMenu } from "@/contexts/MenuOpenContext";
+import { useMenu } from "@/contexts/menuOpenContext";
 
 export const Route = createFileRoute("/websites")({
   component: RouteComponent,

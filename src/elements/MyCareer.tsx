@@ -36,7 +36,7 @@ export default function MyCareer(props: MyCareerInterface) {
   const [journeyText, SetJourneyText] = useState(
     "Scroll to reveal my journey...",
   );
-  const [applyEffect, SetApplyEffect] = useState(false);
+
   const [stateOfCareer, SetStateOfCareer] = useState(0);
 
   useEffect(() => {

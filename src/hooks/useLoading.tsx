@@ -1,6 +1,7 @@
 // from https://dev.to/alejomartinez8/how-to-detect-images-loaded-in-react-39fa
 
-import { useState, useEffect, RefObject } from "react";
+import { useState, useEffect } from "react";
+import type { RefObject } from "react";
 
 export const useOnLoadImages = (ref: RefObject<HTMLElement>) => {
   const [status, setStatus] = useState(false);

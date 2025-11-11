@@ -1,4 +1,3 @@
-import { useMenu } from "@/contexts/MenuOpenContext";
 import { useState, useEffect } from "react";
 import CardSwap, { Card } from "@/components/CardSwap"
 
@@ -10,18 +9,7 @@ interface websiteProps {
 }
 
 export default function Websites(props: websiteProps) {
-  const { menuOpened } = useMenu();
-  const [isLargeScreen, setIsLargeScreen] = useState(false);
-  const [divClassNames, setDivClassNames] = useState("z-1");
-
-
-  useEffect(() => {
-    if (menuOpened) {
-      setDivClassNames("z-1");
-    } else {
-      setDivClassNames("z-10");
-    }
-  }, [menuOpened]);
+  const [_isLargeScreen, setIsLargeScreen] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 1024px)");

@@ -1,6 +1,6 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import { useMenu } from "@/contexts/MenuOpenContext";
+import { useMenu } from "@/contexts/menuOpenContext";
 
 export interface StaggeredMenuItem {
   label: string;
@@ -19,7 +19,6 @@ export interface StaggeredMenuProps {
   displaySocials?: boolean;
   displayItemNumbering?: boolean;
   className?: string;
-  logoUrl?: string;
   menuButtonColor?: string;
   openMenuButtonColor?: string;
   accentColor?: string;
@@ -37,7 +36,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   displaySocials = true,
   displayItemNumbering = true,
   className,
-  logoUrl = "/src/assets/logos/reactbits-gh-white.svg",
   menuButtonColor = "#fff",
   openMenuButtonColor = "#fff",
   changeMenuColorOnOpen = true,
@@ -72,7 +70,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
   const itemEntranceTweenRef = useRef<gsap.core.Tween | null>(null);
 
-  const { menuOpened, setMenuOpened } = useMenu();
+  const { menuOpened: _menuOpened, setMenuOpened } = useMenu();
 
   const zIndexesOpen = {
     topLevelDiv: "z-40",

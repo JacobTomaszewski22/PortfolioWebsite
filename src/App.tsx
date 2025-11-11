@@ -17,7 +17,12 @@ const App = () => {
 
 //Create a container and set it to the root element
 const container = document.getElementById("root");
-const root = createRoot(container);
+let root;
+if(container){
+  root = createRoot(container);
+  root.render(<App />);
+}
+// const root = createRoot(container);
 //Render the app
 // root.render(<StrictMode><App/></StrictMode>);
-root.render(<App />);
+// root.render(<App />);

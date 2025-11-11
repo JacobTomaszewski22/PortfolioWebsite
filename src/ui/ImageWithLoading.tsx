@@ -1,5 +1,5 @@
 import Skeleton from "@mui/material/Skeleton";
-import { useState, useEffect, RefObject } from "react";
+import type { RefObject } from "react";
 import { useOnLoadImages } from "./../hooks/useLoading.tsx";
 import { useRef } from "react";
 

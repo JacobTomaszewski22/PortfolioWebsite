@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ImageWithLoading from "./../ui/ImageWithLoading";
 // import { useScrollLock } from 'usehooks-ts'
 import MyCareer from "./MyCareer";
 import { useNavigate } from "@tanstack/react-router";
-import Button from "@mui/material/Button";
 // import PreviousWebsites from '../PreviousWebsites/PreviousWebsites';
 
-function animationListenerDisappearOnEnd(event) {
+function animationListenerDisappearOnEnd(this: HTMLElement, event: AnimationEvent) {
   switch (event.type) {
     case "animationend":
       this.classList.add("invisible");
@@ -14,25 +13,25 @@ function animationListenerDisappearOnEnd(event) {
   }
 }
 
-function animationListenerAppearOnStart(event) {
-  switch (event.type) {
-    case "animationstart":
-      this.classList.remove("invisible");
-      break;
-  }
-}
+// function animationListenerAppearOnStart(event) {
+//   switch (event.type) {
+//     case "animationstart":
+//       this.classList.remove("invisible");
+//       break;
+//   }
+// }
 
 function MakeInvisibleAndVisible(
   allClassNames: Array<string>,
   makeVisibleString: string,
 ) {
-  for (let arrayElement of allClassNames) {
+  for (const arrayElement of allClassNames) {
     const textElements = Array.from(
       document.getElementsByClassName(
         `${arrayElement}`,
       ) as HTMLCollectionOf<HTMLElement>,
     );
-    for (let textElement of textElements) {
+    for (const textElement of textElements) {
       if (makeVisibleString == arrayElement) {
         textElement.removeEventListener(
           "animationend",
@@ -75,9 +74,9 @@ export default function Intro() {
     "Previous-Websites",
   ];
 
-  //Scroll event to capture the scroll wheel without page scrolling
-  function scrollEvent(event) {
-    //   event?.preventDefault();
+  // Scroll event to capture the scroll wheel without page scrolling
+  function scrollEvent(event: WheelEvent) {
+    // event?.preventDefault();
     if (!isInCareer) {
       setScrolling(scrolling + event.deltaY);
     } else {
