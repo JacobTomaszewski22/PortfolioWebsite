@@ -3,6 +3,7 @@ import { Outlet, createRootRoute } from "@tanstack/react-router";
 // import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import Navigation from "@/elements/Navigation";
 import { MenuProvider } from "@/contexts/menuOpenContext";
+import Footer from "@/elements/Footer"
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -14,6 +15,7 @@ function RootComponent() {
       <MenuProvider>
         <Navigation />
         <Outlet />
+        <Footer/>
       </MenuProvider>
     </React.Fragment>
   );

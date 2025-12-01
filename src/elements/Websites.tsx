@@ -8,6 +8,10 @@ interface websiteProps {
   websiteDescription: React.ReactNode;
 }
 
+function onCardClickWebsiteOpen(URL: string){
+  window.open(URL, "_blank")
+}
+
 export default function Websites(props: websiteProps) {
   const [_isLargeScreen, setIsLargeScreen] = useState(false);
 
@@ -27,14 +31,17 @@ export default function Websites(props: websiteProps) {
 
   return (
     <>
-<div className="relative z-10 text-stone-50 grid lg:grid-cols-2 lg:grid-rows-1 sm:grid-cols-1 sm:grid-rows-2 gap-4 ">
+{/* <div className="relative z-10 text-stone-50 grid lg:grid-cols-2 lg:grid-rows-1 md:grid-cols-1 md:grid-rows-2 gap-4"> */}
+<div className="relative z-10 text-stone-50 grid flex lg:flex-row md:flex-col gap-4">
   <CardSwap
     cardDistance={20}
     verticalDistance={70}
     delay={5000}
     pauseOnHover={true}
-    width={1000}
-    height={600}
+    width={_isLargeScreen? 1000: 500}
+    height={_isLargeScreen? 600: 300}
+    skewAmount={0}
+    onCardClick={(idx) => onCardClickWebsiteOpen(props.websiteURL[idx])}
   >
    {props.websiteURL.map(URL=>(
       <Card>
@@ -56,7 +63,7 @@ export default function Websites(props: websiteProps) {
     </Card>
    ))} 
   </CardSwap>
-  <div className="flex flex-col p-6 text-xl">
+  <div className="flex flex-col p-6 text-xl md:max-w-[40vw] text-clip">
     {props.websiteDescription}
   </div>
 </div>

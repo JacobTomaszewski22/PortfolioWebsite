@@ -23,7 +23,8 @@ export default function Navigation() {
     },
   ];
   return (
-    <div style={{ height: "100vh", background: "#1a1a1a" }}>
+    // <div style={{ height: "100vh", background: "#1a1a1a" }}>
+    <div style={{ height: "100vh" }}>
       <StaggeredMenu
         position="left"
         items={menuItems}

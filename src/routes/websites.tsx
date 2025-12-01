@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import Websites from "@/elements/Websites";
+import WebsiteGrid from "@/elements/WebsiteGrid";
 import { useState, useEffect } from "react";
 import { useMenu } from "@/contexts/menuOpenContext";
 
@@ -18,11 +18,12 @@ function RouteComponent() {
       setDivClassNames("z-10");
     }
   }, [menuOpened]);
+  const websites = ["https://www.burntchapter.com"]
   return (
     <>
-      <div className={`absolute top-0 left-0 translate-y-[35vh] w-full ${divClassNames}`}>
-        
-        <Websites
+      <div className={`absolute top-[8vh] w-full ${divClassNames}`}>  
+        <WebsiteGrid websites={websites}/>
+        {/* <Websites
           websiteURL={["https://www.burntchapter.com","https://www.burntchapter.com/tickets", "https://www.burntchapter.com/photos"]}
           websiteTitle="Burnt Chapter's Website"
           websiteDescription={
@@ -53,8 +54,8 @@ function RouteComponent() {
                 Bandsintown API integration for real-time event information
                 </li>
               </ul>
-          </div>}
-        />
+          </div>} 
+        />*/}
       </div>
     </>
   );
